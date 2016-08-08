@@ -8,5 +8,10 @@
    - name: clone petClinic repo from git
      git: repo=https://github.com/ysegalgit/spring-petclinic.git dest=~/petclinict clone=yes
    - name: clone devOpsCourseRepo repo from git
-     git: repo=https://github.com/ysegalgit/devOpsCourseRepo.git dest=~/devOpsCourseRepo clone=yes
+     git: repo=https://github.com/ysegalgit/devOpsCourseRepo.git dest=~/devOpsCourseRepo clone=yes update=no
+   - name: create maven directory
+     file:  path=~/maven state=directory mode=0755
+   - name: install maven
+     unarchive: src=http://apache.spd.co.il/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip dest=~/maven copy=no creates=~/maven/apache-maven-3.3.9/README.txt
+
 
