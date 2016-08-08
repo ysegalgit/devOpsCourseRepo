@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  tasks:
+   - name: install git!!!
+     yum: name=git state=latest
+     become: yes
+     become_method: sudo
+   - name: clone petClinic repo from git
+     git: repo=https://github.com/ysegalgit/spring-petclinic.git dest=~/petclinict clone=yes
+   - name: clone devOpsCourseRepo repo from git
+     git: repo=https://github.com/ysegalgit/devOpsCourseRepo.git dest=~/devOpsCourseRepo clone=yes
+
